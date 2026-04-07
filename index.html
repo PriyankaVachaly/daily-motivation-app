@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Motivation Generator</title>
+
+  <!-- ✅ Mobile support -->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      height: 100vh;
+
+      display: flex;
+      justify-content: center;
+      align-items: center;
+
+      background-image: url("./image1.png");
+      background-size: cover;
+      background-position: center;
+      color: white;
+    }
+
+    .card {
+      backdrop-filter: blur(12px);
+      background: rgba(0, 0, 0, 0.45);
+      padding: 25px;
+      border-radius: 20px;
+      text-align: center;
+
+      width: 90%;
+      max-width: 400px;
+    }
+
+    h1 {
+      font-size: 22px;
+      margin-bottom: 15px;
+    }
+
+    #quote {
+      font-size: 20px;
+      line-height: 1.5;
+      min-height: 80px;
+      margin: 20px 0;
+      opacity: 1;
+      transition: opacity 0.3s ease;
+    }
+
+    button {
+      padding: 12px 20px;
+      font-size: 16px;
+      border-radius: 12px;
+      border: none;
+      cursor: pointer;
+      background: white;
+      color: black;
+      transition: all 0.3s ease;
+    }
+
+    button:hover {
+      background: black;
+      color: white;
+      transform: scale(1.05);
+    }
+
+    /* 📱 Extra small screens */
+    @media (max-width: 400px) {
+      h1 {
+        font-size: 18px;
+      }
+
+      #quote {
+        font-size: 18px;
+      }
+
+      button {
+        font-size: 14px;
+        padding: 10px 16px;
+      }
+    }
+  </style>
+
+</head>
+
+<body>
+
+  <div class="card">
+    <h1>✨ Daily Motivation ✨</h1>
+
+    <p id="quote">Click the button to get motivated 💛</p>
+
+    <button onclick="generateQuote()">
+      Motivate Me
+    </button>
+  </div>
+
+  <script>
+    const quotes = [
+      "Future me will thank me.",
+      "I don’t quit. I keep going.",
+      "Small steps every day.",
+      "We are building our dream together 💛",
+      "Consistency is my superpower.",
+
+      "I am allowed to grow at my own pace.",
+      "Even slow progress is still progress.",
+      "I am becoming better than I was yesterday.",
+      "I choose discipline over excuses.",
+      "One day, this will all make sense.",
+
+      "I am proud of myself for showing up.",
+      "Hard days are part of the journey.",
+      "I don’t need to be perfect, just consistent.",
+      "I trust the process.",
+      "I am stronger than I think.",
+
+      "My future is created by what I do today.",
+      "I am building a life I love.",
+      "Every small step matters.",
+      "I keep going, no matter what.",
+      "I deserve the life I’m working for.",
+
+      "We are growing together 💛",
+      "We don’t give up on each other or our dreams.",
+      "Side by side, step by step.",
+      "Our future is worth the effort.",
+      "We’re going to make it, together.",
+
+      "It’s okay to rest, but I won’t quit.",
+      "I’ve come too far to stop now.",
+      "Discipline will take me where motivation can’t.",
+      "I believe in myself.",
+      "I am becoming unstoppable.",
+      "We will build our dream life, no matter how long it takes.",
+      "Pri + Rithin = unstoppable 💛",
+      "I am doing this for my future, my family, and myself."
+    ];
+
+    function generateQuote() {
+      const quoteElement = document.getElementById("quote");
+
+      quoteElement.style.opacity = 0;
+
+      setTimeout(() => {
+        const randomIndex = Math.floor(Math.random() * quotes.length);
+        quoteElement.innerText = quotes[randomIndex];
+        quoteElement.style.opacity = 1;
+      }, 200);
+    }
+  </script>
+
+</body>
+</html>
